@@ -1,11 +1,23 @@
 import React, { Component } from "react";
+import {
+    List,
+    ListItem,
+    ListItemText,
+    ListItemIcon,
+    IconButton,
+    ListItemSecondaryAction
+} from "@material-ui/core";
+import RootRef from "@material-ui/core/RootRef";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import InboxIcon from "@material-ui/icons/Inbox";
+import EditIcon from "@material-ui/icons/Edit";
 
 // fake data generator
 const getItems = count =>
     Array.from({ length: count }, (v, k) => k).map(k => ({
         id: `item-${k}`,
-        content: `item ${k}`
+        primary: `item ${k}`,
+        secondary: k % 2 === 0 ? `Whatever for ${k}` : undefined
     }));
 
 // a little function to help us with reordering the result
@@ -17,26 +29,19 @@ const reorder = (list, startIndex, endIndex) => {
     return result;
 };
 
-const grid = 8;
-
 const getItemStyle = (isDragging, draggableStyle) => ({
-    // some basic styles to make the items look a bit nicer
-    userSelect: "none",
-    padding: grid * 2,
-    margin: `0 0 ${grid}px 0`,
-
-    // change background colour if dragging
-    background: isDragging ? "lightgreen" : "grey",
-
     // styles we need to apply on draggables
-    ...draggableStyle
+    ...draggableStyle,
+
+    ...(isDragging && {
+        background: "rgb(235,235,235)"
+    })
 });
 
 const getListStyle = isDraggingOver => ({
-    background: isDraggingOver ? "lightblue" : "lightgrey",
-    padding: grid,
-    width: 250
+    //background: isDraggingOver ? 'lightblue' : 'lightgrey',
 });
+
 export class DragAndDrop extends Component {
     constructor(props) {
         super(props);
@@ -62,39 +67,52 @@ export class DragAndDrop extends Component {
             items
         });
     }
+
+    // Normally you would want to split things out into separate components.
+    // But in this example everything is just done in one place for simplicity
     render() {
         return (
-            <DragDropContext onDragEnd={this.onDragEnd} >
+            <DragDropContext onDragEnd={this.onDragEnd}>
                 <Droppable droppableId="droppable">
                     {(provided, snapshot) => (
-                        <div
-                            {...provided.droppableProps}
-                            ref={provided.innerRef}
-                            style={getListStyle(snapshot.isDraggingOver)}
-                        >
-                            {this.state.items.map((item, index) => (
-                                <Draggable key={item.id} draggableId={item.id} index={index}>
-                                    {(provided, snapshot) => (
-                                        <div
-                                            ref={provided.innerRef}
-                                            {...provided.draggableProps}
-                                            {...provided.dragHandleProps}
-                                            style={getItemStyle(
-                                                snapshot.isDragging,
-                                                provided.draggableProps.style
-                                            )}
-                                        >
-                                            {item.content}
-                                        </div>
-                                    )}
-                                </Draggable>
-                            ))}
-                            {provided.placeholder}
-                        </div>
+                        <RootRef rootRef={provided.innerRef}>
+                            <List style={getListStyle(snapshot.isDraggingOver)}>
+                                {this.state.items.map((item, index) => (
+                                    <Draggable key={item.id} draggableId={item.id} index={index}>
+                                        {(provided, snapshot) => (
+                                            <ListItem
+                                                ContainerComponent="li"
+                                                ContainerProps={{ ref: provided.innerRef }}
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}
+                                                style={getItemStyle(
+                                                    snapshot.isDragging,
+                                                    provided.draggableProps.style
+                                                )}
+                                            >
+                                                <ListItemIcon>
+                                                    <InboxIcon />
+                                                </ListItemIcon>
+                                                <ListItemText
+                                                    primary={item.primary}
+                                                    secondary={item.secondary}
+                                                />
+                                                <ListItemSecondaryAction>
+                                                    <IconButton>
+                                                        <EditIcon />
+                                                    </IconButton>
+                                                </ListItemSecondaryAction>
+                                            </ListItem>
+                                        )}
+                                    </Draggable>
+                                ))}
+                                {provided.placeholder}
+                            </List>
+                        </RootRef>
                     )}
                 </Droppable>
-            </DragDropContext >
-        )
+            </DragDropContext>
+        );
     }
 }
 

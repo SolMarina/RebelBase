@@ -18,9 +18,19 @@ body{
  
 }
 .box2{
-color:#738485
-} 
+display: flex;
+flex-flow: column;
+color:#738485;
 
-.sidenav {
-  padding-top: 40px;
+
 }
+.sidenav.sidenav-fixed {
+  padding-top: 40px;
+  box-shadow: none ;
+}
+.box3{
+ border: solid 2px lightgrey;
+ border-bottom: hidden;
+  } 
+
+  ul#nav li.active a { color: #f4ba51 ; }

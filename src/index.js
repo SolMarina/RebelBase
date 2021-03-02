@@ -7,8 +7,8 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
 
-    <RebelBaseApp />,
-    
+  <RebelBaseApp />,
+
   document.getElementById('root')
 );
 
