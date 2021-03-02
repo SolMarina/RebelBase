@@ -1,8 +1,8 @@
 import React from 'react';
-import DragAndDrop from './components/DragAndDrop';
-import NavBar from './components/NavBar';
+import DragAndDrop from './components/dragAndDrop/DragAndDrop'
+import NavBar from './components/navbar/NavBar';
 import dataInfo from './dataInfo.json';
-import App from './components/DragAndDrop'
+
 const RebelBaseApp = () => {
     const categoryList = dataInfo.map(category => {
         return {
@@ -19,7 +19,7 @@ const RebelBaseApp = () => {
             <div className="box2" >
                 <h4>Select Builder Schedule-2019 Fall Cohort</h4>
                 <div>
-                    <DragAndDrop/>
+                  <DragAndDrop/>
                 </div>
             </div>
         </div>
