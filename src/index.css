@@ -1,36 +1,68 @@
 *{
-  font-family: Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 }
-
 body{
-  padding: 20px;
+padding: 20px;
 }
-
 .box{
   display: flex;
   flex-flow: row;
 }
-
 .box1{
   display: flex;
   flex-flow: column;
   width: 25%;
- 
 }
 .box2{
 display: flex;
 flex-flow: column;
-color:#738485;
+border: solid 2px lightgrey;
+width: 100%;
 
+}
 
+.box3{
+  padding: 30px;
 }
 .sidenav.sidenav-fixed {
   padding-top: 40px;
   box-shadow: none ;
 }
-.box3{
- border: solid 2px lightgrey;
- border-bottom: hidden;
-  } 
 
-  ul#nav li.active a { color: #f4ba51 ; }
+.MuiListItem-root{
+border: none
+   
+}
+.MuiListItemText-root.MuiListItemText-multiline{
+  width: 100%;
+  height: 100%;
+}
+
+.box4{
+color:black;
+width: 60%;
+  }
+ .cards{
+display: flex;
+flex-flow: row;
+align-items: center;
+justify-content: space-between;
+
+width: 55%;
+border: 1px solid #1FAEBC;
+padding: 10px;
+box-shadow: 5px 5px 8px grey;
+border-radius: 5px;
+
+} 
+.date{
+  display:flex;
+  flex-flow: row;
+ 
+}
+
+.imgicon{
+  display: flex;
+  flex: 1 1 ;
+}
+ 

@@ -5,27 +5,13 @@ import {
     ListItem,
     ListItemText,
     ListItemIcon,
-    
+    IconButton,
     ListItemSecondaryAction,
-
 
 } from "@material-ui/core";
 import RootRef from "@material-ui/core/RootRef";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import DragHandle from "@material-ui/icons/DragHandle";
-
-
-// fake data generator
-const getItems = count =>
-    Array.from({ length: count }, (v, k) => k).map(k => ({
-        id: `item-${k}`,
-        primary: `item ${k}`,
-        secondary: `View builder`
-    }));
-
-
-
-
 
 
 // a little function to help us with reordering the result
@@ -42,7 +28,7 @@ const getItemStyle = (isDragging, draggableStyle) => ({
     ...draggableStyle,
 
     ...(isDragging && {
-        background: "rgb(235,235,235)"
+        background: "rgb(255, 255, 255)"
     })
 });
 
@@ -50,14 +36,12 @@ const getListStyle = isDraggingOver => ({
     //background: isDraggingOver ? 'lightblue' : 'lightgrey',
 });
 
-
-
 export class DragAndDrop extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: getItems(10),
-            cat: props.details()
+            items: props.getItems
+
         };
         this.onDragEnd = this.onDragEnd.bind(this);
     }
@@ -82,17 +66,7 @@ export class DragAndDrop extends Component {
 
     }
 
-
-
     render() {
-
-        {console.log("ANTES DEL BUILD");
-        console.log(this.state.items);
-        console.log(" a ver a ver que vieneeeeee")
-        console.log(this.state.cat);
-        console.log("============================")
-    }
-
         return (
             <DragDropContext onDragEnd={this.onDragEnd}>
                 <Droppable droppableId="droppable">
@@ -117,24 +91,26 @@ export class DragAndDrop extends Component {
                                                     <DragHandle color="primary" />
 
                                                 </ListItemIcon>
-
-
+                                                <div className ="cards">
                                                 <ListItemText
-
-
                                                     primary={item.primary}
                                                     secondary={item.secondary}
                                                 />
+                                                
+                                                 <img src={item.image} alt="" width="50" height="50" ></img>
+                                                </div>
+                                                
                                                 <ListItemSecondaryAction>
-                                                    
-
-                                                        <input type="date" id="start" name="trip-start"
-                                                            value="2018-07-22"
-                                                            min="2018-01-01" max="2018-12-31"></input>
-                                                        <input type="time" id="appt" name="appt"
-                                                            min="09:00" max="18:00" required></input>
-
-                                                    
+                                                    <IconButton>
+                                                        <div>
+                                                            <input type="date" id="start" name="trip-start"
+                                                                placeholder="MMM DD,YYYY"  />
+                                                        </div>
+                                                        <div>
+                                                            <input type="time" id="appt" name="appt" min="09:00"
+                                                                max="18:00" required />
+                                                        </div>
+                                                    </IconButton>
                                                 </ListItemSecondaryAction>
                                             </ListItem>
                                         )}

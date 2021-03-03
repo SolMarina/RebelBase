@@ -17,7 +17,7 @@ const NavBar = (props) => {
       <ul id="slide-out" className="sidenav sidenav-fixed">
 
         {
-          props.details.map(item => { return (<li><a href="#!" value={item} onClick={props.onClick()}> {item}</a></li>) })
+          props.details.map(item => { return (<li><a href="#!" value={item} key={item.key} onClick={props.onClick()}> {item}</a></li>) })
         }
 
       </ul>
@@ -25,5 +25,4 @@ const NavBar = (props) => {
   )
 }
 export default NavBar
-
 
