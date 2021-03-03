@@ -1,24 +1,18 @@
 import React, { Component } from "react";
 import {
+
     List,
     ListItem,
     ListItemText,
     ListItemIcon,
     IconButton,
-    ListItemSecondaryAction
+    ListItemSecondaryAction,
+
 } from "@material-ui/core";
 import RootRef from "@material-ui/core/RootRef";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import InboxIcon from "@material-ui/icons/Inbox";
-import EditIcon from "@material-ui/icons/Edit";
+import DragHandle from "@material-ui/icons/DragHandle";
 
-// fake data generator
-const getItems = count =>
-    Array.from({ length: count }, (v, k) => k).map(k => ({
-        id: `item-${k}`,
-        primary: `item ${k}`,
-        secondary: k % 2 === 0 ? `Whatever for ${k}` : undefined
-    }));
 
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
@@ -34,7 +28,7 @@ const getItemStyle = (isDragging, draggableStyle) => ({
     ...draggableStyle,
 
     ...(isDragging && {
-        background: "rgb(235,235,235)"
+        background: "rgb(255, 255, 255)"
     })
 });
 
@@ -46,7 +40,8 @@ export class DragAndDrop extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: getItems(10)
+            items: props.getItems
+
         };
         this.onDragEnd = this.onDragEnd.bind(this);
     }
@@ -66,10 +61,11 @@ export class DragAndDrop extends Component {
         this.setState({
             items
         });
+
+
+
     }
 
-    // Normally you would want to split things out into separate components.
-    // But in this example everything is just done in one place for simplicity
     render() {
         return (
             <DragDropContext onDragEnd={this.onDragEnd}>
@@ -91,15 +87,29 @@ export class DragAndDrop extends Component {
                                                 )}
                                             >
                                                 <ListItemIcon>
-                                                    <InboxIcon />
+
+                                                    <DragHandle color="primary" />
+
                                                 </ListItemIcon>
+                                                <div className ="cards">
                                                 <ListItemText
                                                     primary={item.primary}
                                                     secondary={item.secondary}
                                                 />
+                                                
+                                                 <img src={item.image} alt="" width="50" height="50" ></img>
+                                                </div>
+                                                
                                                 <ListItemSecondaryAction>
                                                     <IconButton>
-                                                        <EditIcon />
+                                                        <div>
+                                                            <input type="date" id="start" name="trip-start"
+                                                                placeholder="MMM DD,YYYY"  />
+                                                        </div>
+                                                        <div>
+                                                            <input type="time" id="appt" name="appt" min="09:00"
+                                                                max="18:00" required />
+                                                        </div>
                                                     </IconButton>
                                                 </ListItemSecondaryAction>
                                             </ListItem>

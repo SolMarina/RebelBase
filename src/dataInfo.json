@@ -4,17 +4,17 @@
         "task": [
             {
                 "id": "1",
-                "img": "http://lorempixel.com/640/480/fashion",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
                 "product": "Problem"
             },
             {
                 "id": "2",
-                "img": "http://lorempixel.com/640/480/fashion",
-                "product": "Solution"
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
+                "product": "Technologies"
             },
             {
                 "id": "3",
-                "img": "http://lorempixel.com/640/480/fashion",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
                 "product": "Team"
             }
         ]
@@ -24,18 +24,18 @@
         "task": [
             {
                 "id": "1",
-                "img": "http://lorempixel.com/640/480/fashion",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
                 "product": "Ecosystem"
             },
             {
                 "id": "2",
-                "img": "http://lorempixel.com/640/480/fashion",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
                 "product": "Results"
             },
             {
                 "id": "3",
-                "img": "http://lorempixel.com/640/480/fashion",
-                "product": "microsystem"
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
+                "product": "Microsystem"
             }
         ]
     },
@@ -44,20 +44,19 @@
         "task": [
             {
                 "id": "1",
-                "img": "http://lorempixel.com/640/480/fashion",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
                 "product": "Innovation"
             },
             {
                 "id": "2",
-                "img": "http://lorempixel.com/640/480/fashion",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
                 "product": "Prototype"
             },
             {
                 "id": "3",
-                "img": "http://lorempixel.com/640/480/fashion",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
                 "product": "Solution"
             }
         ]
     }
 ]
-

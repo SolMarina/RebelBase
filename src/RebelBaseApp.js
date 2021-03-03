@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import DragAndDrop from './components/dragAndDrop/DragAndDrop';
 import NavBar from './components/navbar/NavBar';
 import dataInfo from './dataInfo.json';
+import DataTable from './components/dataTable/DataTable';
 
 const RebelBaseApp = () => {
     const [categoryList, SetcategoryList] = useState([]);
@@ -25,8 +25,8 @@ const RebelBaseApp = () => {
 
     useEffect(() => {
         SetcategoryList(getCategories());
-       }, [])
-    
+    }, [])
+
 
 
     const updatecategorySelected = (val) => {
@@ -40,13 +40,16 @@ const RebelBaseApp = () => {
     return (
         <div className="box">
             <div className="box1">
-                <NavBar details={categoryList}  onClick={() => updatecategorySelected} />
+                <NavBar details={categoryList} onClick={() => updatecategorySelected} />
             </div>
-
-            <div className="box2" >
+            <div className="box4">
                 <h4>Select Builder Schedule-2019 Fall Cohort</h4>
-                <div className="box3" >
-                    <DragAndDrop details={getFilterCategory} />
+                <div className="box2" >
+
+
+                    <div className="box3" >
+                        <DataTable details={getFilterCategory()} />
+                    </div>
                 </div>
             </div>
         </div>
