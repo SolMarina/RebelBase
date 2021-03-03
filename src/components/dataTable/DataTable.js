@@ -32,9 +32,9 @@ const DataTable = (props) => {
                     data.map(item => {
                         const rows = getArrayDragsItems(item.task)
                         return (
-                            <div>
+                            <div >
                                 <h5> {item.id} </h5>
-                                <DragAndDrop getItems={rows} />
+                                <DragAndDrop getItems= {rows}/>
                             </div >
                         )
                     })
@@ -50,7 +50,7 @@ const DataTable = (props) => {
         console.log(itemsDragable)
         return (
             <div>
-                <h1> {data.id} </h1>
+                <h5> {data.id} </h5>
                 <DragAndDrop getItems={itemsDragable} />
             </div >
         )
