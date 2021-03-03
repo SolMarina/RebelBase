@@ -47,22 +47,188 @@ display: flex;
 flex-flow: row;
 align-items: center;
 justify-content: space-between;
-
 width: 55%;
-border: 1px solid #1FAEBC;
+border: 1px solid #1faebc;
 padding: 10px;
 box-shadow: 5px 5px 8px grey;
 border-radius: 5px;
+ }
 
+.buttonr{
+  border-radius: 50px;
+  height: 21px;
+  background-color: #1faebc;
+  border-color:#1faebc ;
+  color: white;
+}
+
+
+
+ /*Clases deshabilitadas*/
+.cardsdisable{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 55%;
+  padding: 10px;
+  box-shadow: 5px 5px 8px grey;
+  border-radius: 5px;
 } 
+.buttonrdisable{
+  border-radius: 50px;
+  height: 21px;
+  background-color:lightgray;
+  border-color:lightgray;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
 .date{
   display:flex;
   flex-flow: row;
  
 }
 
-.imgicon{
-  display: flex;
-  flex: 1 1 ;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+  body{
+   padding:0;
+   
+    }
+    .box{
+      display: flex;
+      flex-flow: row;
+      
+    }
+    .box1{
+      display: flex;
+      flex-flow: column;
+      display:none;
+      background-color: darkgray;
+    }
+    .box2{
+    display: flex;
+    flex-flow: column;
+    border: solid 2px lightgrey;
+    width: 90%;
+    
+    
+    }
+    
+    
+    .sidenav.sidenav-fixed {
+      padding-top: 40px;
+      box-shadow: none ;
+
+    }
+    
+    .MuiListItem-root{
+   
+    width: 80%;
+    height: 100%;
+    flex: 1 1;
+    border: 1px solid #1faebc;
+    box-shadow: 2px 2px 4px grey;
+    border-radius: 5px;
+
+       
+    }
+
+    .MuiListItemText-root.MuiListItemText-multiline{
+      width: 100%;
+      height: 100%;
+      flex-flow: row;
+      font-size: 10px;
+    }
+    
+    .box4{
+    color:black;
+    width: 100%;
+   
+    
+      }
+
+    
+
+     .cards{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    
+    } 
+
+  
+    
+     .imgicon{
+      width: 25px;
+      height: 25px;
+    }
+    #start{
+      font-size: 10px;
+      height: 1em;
+     
+     
+    }
+    #appt{
+      font-size: 10px;
+      height: 1em;
+     
+    }
+.date{
  
+  height: 0;
+  width: 50%;
+  margin-top: 35px;
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+}

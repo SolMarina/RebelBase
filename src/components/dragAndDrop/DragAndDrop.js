@@ -12,6 +12,8 @@ import {
 import RootRef from "@material-ui/core/RootRef";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import DragHandle from "@material-ui/icons/DragHandle";
+import LensIcon from '@material-ui/icons/Lens';
+import { cyan } from '@material-ui/core/colors';
 
 
 // a little function to help us with reordering the result
@@ -86,32 +88,35 @@ export class DragAndDrop extends Component {
                                                     provided.draggableProps.style
                                                 )}
                                             >
-                                                <ListItemIcon>
-
-                                                    <DragHandle color="primary" />
-
-                                                </ListItemIcon>
-                                                <div className ="cards">
-                                                <ListItemText
-                                                    primary={item.primary}
-                                                    secondary={item.secondary}
-                                                />
+                                               
+                                                <IconButton >
+                                                <button className="buttonr">.</button>
+                                                </IconButton>
                                                 
-                                                 <img src={item.image} alt="" width="50" height="50" ></img>
-                                                </div>
+                                                    <div className="cards">
+                                                        <ListItemText
+                                                            primary={item.primary}
+                                                            secondary={item.secondary}
+                                                        />
+
+                                                        <img className="imgicon" src={item.image} alt="" width="50" height="50" ></img>
+                                                    </div>
+
+                                                    <ListItemSecondaryAction>
+                                                        
+                                                            <div className="date">
+                                                            <div>
+                                                                <input type="date" id="start"
+                                                                    placeholder="MMM DD,YYYY" />
+                                                            </div>
+                                                            <div>
+                                                                <input type="time" id="appt"  min="09:00"
+                                                                    max="18:00" />
+                                                            </div>
+                                                            </div>
+                                                      
+                                                    </ListItemSecondaryAction>
                                                 
-                                                <ListItemSecondaryAction>
-                                                    <IconButton>
-                                                        <div>
-                                                            <input type="date" id="start" name="trip-start"
-                                                                placeholder="MMM DD,YYYY"  />
-                                                        </div>
-                                                        <div>
-                                                            <input type="time" id="appt" name="appt" min="09:00"
-                                                                max="18:00" required />
-                                                        </div>
-                                                    </IconButton>
-                                                </ListItemSecondaryAction>
                                             </ListItem>
                                         )}
                                     </Draggable>
