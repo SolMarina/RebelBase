@@ -1,24 +1,32 @@
 import React, { Component } from "react";
 import {
+
     List,
     ListItem,
     ListItemText,
     ListItemIcon,
-    IconButton,
-    ListItemSecondaryAction
+    
+    ListItemSecondaryAction,
+
+
 } from "@material-ui/core";
 import RootRef from "@material-ui/core/RootRef";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import InboxIcon from "@material-ui/icons/Inbox";
-import EditIcon from "@material-ui/icons/Edit";
+import DragHandle from "@material-ui/icons/DragHandle";
+
 
 // fake data generator
 const getItems = count =>
     Array.from({ length: count }, (v, k) => k).map(k => ({
         id: `item-${k}`,
         primary: `item ${k}`,
-        secondary: k % 2 === 0 ? `Whatever for ${k}` : undefined
+        secondary: `View builder`
     }));
+
+
+
+
+
 
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
@@ -42,11 +50,14 @@ const getListStyle = isDraggingOver => ({
     //background: isDraggingOver ? 'lightblue' : 'lightgrey',
 });
 
+
+
 export class DragAndDrop extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: getItems(10)
+            items: getItems(10),
+            cat: props.details()
         };
         this.onDragEnd = this.onDragEnd.bind(this);
     }
@@ -66,11 +77,22 @@ export class DragAndDrop extends Component {
         this.setState({
             items
         });
+
+
+
     }
 
-    // Normally you would want to split things out into separate components.
-    // But in this example everything is just done in one place for simplicity
+
+
     render() {
+
+        {console.log("ANTES DEL BUILD");
+        console.log(this.state.items);
+        console.log(" a ver a ver que vieneeeeee")
+        console.log(this.state.cat);
+        console.log("============================")
+    }
+
         return (
             <DragDropContext onDragEnd={this.onDragEnd}>
                 <Droppable droppableId="droppable">
@@ -91,16 +113,28 @@ export class DragAndDrop extends Component {
                                                 )}
                                             >
                                                 <ListItemIcon>
-                                                    <InboxIcon />
+
+                                                    <DragHandle color="primary" />
+
                                                 </ListItemIcon>
+
+
                                                 <ListItemText
+
+
                                                     primary={item.primary}
                                                     secondary={item.secondary}
                                                 />
                                                 <ListItemSecondaryAction>
-                                                    <IconButton>
-                                                        <EditIcon />
-                                                    </IconButton>
+                                                    
+
+                                                        <input type="date" id="start" name="trip-start"
+                                                            value="2018-07-22"
+                                                            min="2018-01-01" max="2018-12-31"></input>
+                                                        <input type="time" id="appt" name="appt"
+                                                            min="09:00" max="18:00" required></input>
+
+                                                    
                                                 </ListItemSecondaryAction>
                                             </ListItem>
                                         )}
