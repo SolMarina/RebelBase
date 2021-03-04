@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './components/navbar/NavBar';
 import dataInfo from './dataInfo.json';
 import DataTable from './components/dataTable/DataTable';
-
+import NavMobile from './components/navmobile/NavMobile';
 const RebelBaseApp = () => {
     const [categoryList, SetcategoryList] = useState([]);
     const [categorySelected, setCategorySelected] = useState('All');
@@ -44,6 +44,7 @@ const RebelBaseApp = () => {
             </div>
             <div className="box4">
                 <h4>Select Builder Schedule-2019 Fall Cohort</h4>
+                <NavMobile details={categoryList} onClick={() => updatecategorySelected}/>
                 <div className="box2" >
 
 

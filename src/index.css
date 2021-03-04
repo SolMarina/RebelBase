@@ -36,6 +36,7 @@ border: none
 .MuiListItemText-root.MuiListItemText-multiline{
   width: 100%;
   height: 100%;
+  
 }
 
 .box4{
@@ -62,6 +63,15 @@ border-radius: 5px;
   color: white;
 }
 
+.date{
+  display:flex;
+  flex-flow: row;
+ 
+}
+
+.MuiListItemText-secondary{
+   color: rgba(7, 138, 255, 0.7)
+}
 
 
  /*Clases deshabilitadas*/
@@ -82,39 +92,9 @@ border-radius: 5px;
   border-color:lightgray;
   color: white;
 }
-
-
-
-
-
-
-
-
-
-
-.date{
-  display:flex;
-  flex-flow: row;
- 
+.imgicondisable{
+  filter: grayscale(100%);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -177,11 +157,8 @@ border-radius: 5px;
     .box4{
     color:black;
     width: 100%;
-   
-    
-      }
-
-    
+    padding-left: 20px;
+    }
 
      .cards{
     display: flex;
@@ -197,8 +174,8 @@ border-radius: 5px;
   
     
      .imgicon{
-      width: 25px;
-      height: 25px;
+      width: 50px;
+      height: 50px;
     }
     #start{
       font-size: 10px;

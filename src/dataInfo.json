@@ -4,17 +4,17 @@
         "task": [
             {
                 "id": "1",
-                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Problem"
             },
             {
                 "id": "2",
-                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Technologies"
             },
             {
                 "id": "3",
-                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Team"
             }
         ]
@@ -24,17 +24,17 @@
         "task": [
             {
                 "id": "1",
-                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Ecosystem"
             },
             {
                 "id": "2",
-                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Results"
             },
             {
                 "id": "3",
-                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Microsystem"
             }
         ]
@@ -44,17 +44,17 @@
         "task": [
             {
                 "id": "1",
-                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Innovation"
             },
             {
                 "id": "2",
-                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Prototype"
             },
             {
                 "id": "3",
-                "img": "https://raw.githubusercontent.com/SolMarina/prueba/datatable/src/assents/img/geometricos.png",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Solution"
             }
         ]
