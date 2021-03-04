@@ -4,9 +4,6 @@ import DragAndDrop from '../dragAndDrop/DragAndDrop'
 const DataTable = (props) => {
 
     const data = props.details;
-    console.log("dentro de data table a ver que llegaaaaaa")
-    console.log(data)
-    console.log("dentro de data table a ver que llegaaaaaawwwwwww")
 
     const getArrayDragsItems = (data) => {
 
@@ -34,7 +31,7 @@ const DataTable = (props) => {
                         return (
                             <div >
                                 <h5> {item.id} </h5>
-                                <DragAndDrop getItems= {rows}/>
+                                <DragAndDrop getItems={rows} />
                             </div >
                         )
                     })
@@ -46,8 +43,6 @@ const DataTable = (props) => {
     } else {
 
         let itemsDragable = getArrayDragsItems(data.task);
-        console.log("antes del render")
-        console.log(itemsDragable)
         return (
             <div>
                 <h5> {data.id} </h5>

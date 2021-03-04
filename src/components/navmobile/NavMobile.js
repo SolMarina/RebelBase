@@ -17,33 +17,22 @@ const useStyles = makeStyles((theme) => ({
 
 const NavResponsive = (props) => {
     const classes = useStyles();
-    const [state, setState] = React.useState({
-        age: '',
-        name: 'hai',
-    });
+   
+    const selectOptions = props.details.filter(item => item !== 'All');;
 
-    const handleChange = (event) => {
-        const name = event.target.name;
-        setState({
-            ...state,
-            [name]: event.target.value,
-        });
-    };
     return (
         <div className={styles.navb}>
             <div className={styles.buttonBox}>
-                <button className={styles.button1}>All</button>
+                <button className={styles.button1} onClick={props.onClick()}>All</button>
             </div>
             <div className={styles.selectBox}>
                 <FormControl className={classes.formControl}>
                     <NativeSelect
-                        value={state.age}
-                        onChange={handleChange}
-                        name="age"
+                        onChange={props.onChange()}
                         className={classes.selectEmpty}
-                        inputProps={{ 'aria-label': 'age' }}
+                        
                     >
-                        {props.details.map(item => { return (<option value={item}> {item}</option>) })}
+                        {selectOptions.map(item => { return (<option key={item} value={item}> {item}</option>) })}
 
                     </NativeSelect>
 

@@ -83,7 +83,6 @@ export class DragAndDrop extends Component {
                                                     provided.draggableProps.style
                                                 )}
                                             >
-
                                                 <IconButton >
                                                     <button className="buttonr">.</button>
                                                 </IconButton>
@@ -98,7 +97,6 @@ export class DragAndDrop extends Component {
                                                 </div>
 
                                                 <ListItemSecondaryAction>
-
                                                     <div className="date">
                                                         <div>
                                                             <input type="date" id="start"

@@ -27,29 +27,40 @@ const RebelBaseApp = () => {
         SetcategoryList(getCategories());
     }, [])
 
-
-
     const updatecategorySelected = (val) => {
         setCategorySelected(val.target.attributes[1].nodeValue);
     };
 
+    const updateAll = () => {
+        setCategorySelected('All');
+        console.log(categorySelected)
+    };
+
+    const handleChange = (event) => {
+        console.log('entro en esta verga del select');
+        setCategorySelected(event.target.value);
+        console.log(categorySelected)
+      };
+
     //getCategories();
     console.log("categorySelected")
     console.log(categorySelected)
+    
 
     return (
         <div className="box">
             <div className="box1">
                 <NavBar details={categoryList} onClick={() => updatecategorySelected} />
             </div>
+           
             <div className="box4">
                 <h4>Select Builder Schedule-2019 Fall Cohort</h4>
-                <NavMobile details={categoryList} onClick={() => updatecategorySelected}/>
+                <NavMobile details={categoryList} onClick={() => updateAll} onChange={(event) => handleChange} />
                 <div className="box2" >
-
-
+             
                     <div className="box3" >
-                        <DataTable details={getFilterCategory()} />
+                      
+                        <DataTable details={getFilterCategory()}  />
                     </div>
                 </div>
             </div>
