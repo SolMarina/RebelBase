@@ -1,0 +1,22 @@
+.navb{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+   padding-left:10px ;
+   justify-content:space-evenly
+}
+
+@media only screen and (min-width: 800px) {
+    .navb{
+    display:none;
+    }
+}
+
+.buttonBox{
+padding-top: 10px;
+
+}
+
+
+
+
