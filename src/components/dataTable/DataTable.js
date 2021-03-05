@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DragAndDrop from '../dragAndDrop/DragAndDrop'
 
 const DataTable = (props) => {
 
-    const data = props.details;
+    const [data, setData] = useState(props.details);
+
+
+    useEffect(() => {
+        setData(props.details);
+    });
 
     const getArrayDragsItems = (data) => {
 
@@ -43,11 +48,10 @@ const DataTable = (props) => {
 
     } else {
 
-        let itemsDragable = getArrayDragsItems(data.task);
         return (
             <div>
                 <h5> {data.id} </h5>
-                <DragAndDrop getItems={itemsDragable} />
+                <DragAndDrop getItems={getArrayDragsItems(data.task)} />
             </div >
         )
     }

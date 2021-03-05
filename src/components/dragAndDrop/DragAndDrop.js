@@ -33,12 +33,13 @@ const getListStyle = isDraggingOver => ({
     //background: isDraggingOver ? 'lightblue' : 'lightgrey',
 });
 
+
+
 export class DragAndDrop extends Component {
     constructor(props) {
         super(props);
         this.state = {
             items: props.getItems
-
         };
         this.onDragEnd = this.onDragEnd.bind(this);
     }
@@ -59,16 +60,22 @@ export class DragAndDrop extends Component {
             items
         });
 
+    }
 
-
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            items: nextProps.getItems
+        });
     }
 
     disableItem(number) {
         const result = this.state.items.find(x => x.id === number).status
         this.state.items.find(x => x.id === number).status = !result;
+        this.setState({
+            items: this.state.items
+        })
     }
 
-    //</ListItem><div className="cards">cardsdisable
     render() {
         return (
             <DragDropContext onDragEnd={this.onDragEnd}>
