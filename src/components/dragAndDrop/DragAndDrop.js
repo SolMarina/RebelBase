@@ -63,6 +63,12 @@ export class DragAndDrop extends Component {
 
     }
 
+    disableItem(number) {
+        const result = this.state.items.find(x => x.id === number).status
+        this.state.items.find(x => x.id === number).status = !result;
+    }
+
+    //</ListItem><div className="cards">cardsdisable
     render() {
         return (
             <DragDropContext onDragEnd={this.onDragEnd}>
@@ -84,20 +90,20 @@ export class DragAndDrop extends Component {
                                                 )}
                                             >
                                                 <IconButton >
-                                                    <button className="buttonr">.</button>
+                                                    <button className="buttonr" value={item.id} onClick={() => { this.disableItem(item.id) }}>.</button>
                                                 </IconButton>
 
-                                                <div className="cards">
+                                                <div className={item.status ? 'cards' : 'cardsdisable'}>
+
                                                     <ListItemText
                                                         primary={item.primary}
                                                         secondary={item.secondary}
                                                     />
-
-                                                    <img className="imgicon" src={item.image} alt="" width="80" height="80" ></img>
+                                                    <img className={item.status ? "imgicon" : "imgicondisable"} src={item.image} alt="" width="80" height="80" ></img>
                                                 </div>
 
                                                 <ListItemSecondaryAction>
-                                                    <div className="date">
+                                                    <div className={item.status ? "date" : "datedisable"}               >
                                                         <div>
                                                             <input type="date" id="start"
                                                                 placeholder="MMM DD,YYYY" />

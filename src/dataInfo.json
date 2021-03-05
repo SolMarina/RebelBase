@@ -16,6 +16,11 @@
                 "id": "3",
                 "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Team"
+            },
+            {
+                "id": "4",
+                "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
+                "product": "Trust"
             }
         ]
     },
@@ -23,17 +28,17 @@
         "id": "Validation",
         "task": [
             {
-                "id": "1",
+                "id": "5",
                 "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Ecosystem"
             },
             {
-                "id": "2",
+                "id": "6",
                 "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Results"
             },
             {
-                "id": "3",
+                "id": "7",
                 "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Microsystem"
             }
@@ -43,17 +48,17 @@
         "id": "Social Innovation",
         "task": [
             {
-                "id": "1",
+                "id": "8",
                 "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Innovation"
             },
             {
-                "id": "2",
+                "id": "9",
                 "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Prototype"
             },
             {
-                "id": "3",
+                "id": "10",
                 "img": "https://raw.githubusercontent.com/SolMarina/prueba/master/src/assents/img/geometricos.png",
                 "product": "Solution"
             }

@@ -13,7 +13,8 @@ const DataTable = (props) => {
                 id: value.id,
                 image: value.img,
                 primary: value.product,
-                secondary: 'View builder'
+                secondary: 'View builder',
+                status: true
             }
             dragItems.push(card);
         }
